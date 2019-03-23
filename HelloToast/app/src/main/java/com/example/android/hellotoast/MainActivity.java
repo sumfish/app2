@@ -16,6 +16,7 @@
 
 package com.example.android.hellotoast;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -50,9 +51,14 @@ public class MainActivity extends AppCompatActivity {
     *             the passed in view is not used.
     */
     public void showToast(View view) {
-        Toast toast = Toast.makeText(this, R.string.toast_message,
+        /*Toast toast = Toast.makeText(this, R.string.toast_message,
                 Toast.LENGTH_SHORT);
-        toast.show();
+        toast.show();*/
+        String passed_val=mShowCount.getText().toString();
+        Intent intent=new Intent(this,SecondActivity.class);
+        intent.putExtra("COUNT",passed_val);
+        startActivity(intent);
+
     }
 
     /*
